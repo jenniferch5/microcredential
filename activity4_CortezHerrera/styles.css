@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+  }
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/roadSunset.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    animation: background 3s ease-out 1;
+}
+
+.h1{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    color: aliceblue;
+    letter-spacing: 7px;
+    text-shadow: 6px 6px 0px black;
+    font-size: 3.2rem;
+    animation: text 4s ease-out 1;
+}
+
+h1 span{
+    color: #eaff02;
+    text-shadow: 10px 10px 25px rgb(81,67,21),
+    -10px 10px 25px rgb(81,67,21),
+    -10px -10px 25px rgb(81,67,21),
+    10px -10px 25px rgb(81,67,21);
+}
+
+hr{
+    color: aliceblue;
+    width: 30%;
+    position: absolute;
+}
+
+.sun{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: -5%;
+    left: 35%;
+    right: 35%;
+}
+
+.sun img{
+    width: 30%;
+    animation: sun 4s ease 1;
+    animation-fill-mode: forwards;
+}
+
+.hearts{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.heart1{
+    position: absolute;
+    top: -90%;
+    left: 5%;
+    animation: heart 1s ease-out infinite;
+    animation-delay: 4s;
+    animation-fill-mode: backwards;
+}
+
+.heart2{
+    width: 25%;
+    position: absolute;
+    top: -80%;
+    left: 70%;
+    animation: heart 1s ease-out infinite;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+
+.heart3{
+    width: 10%;
+    position: absolute;
+    top: -30%;
+    left: 60%;
+    animation: heart 1s ease-out infinite;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+
+.heart4{
+    width: 16%;
+    position: absolute;
+    top: -30%;
+    left: 20%;
+    animation: heart 1s ease-out infinite;
+    animation-delay: 4s;
+    animation-fill-mode: backwards;
+}
+
+.heart5{
+    width: 13%;
+    position: absolute;
+    top: -50%;
+    left: 10%;
+    animation: heart 3s ease-out infinite;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+
+.heart6{
+    width: 5%;
+    position: absolute;
+    top: -35%;
+    left: 90%;
+    animation: heart 8s ease-out infinite;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
+} 
+
+.heart7{
+    width: 3%;
+    position: absolute;
+    top: -25%;
+    left: 10%;
+    animation: heart 1s ease-out infinite;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+.heart8{
+    width: 2%;
+    position: absolute;
+    top: -58%;
+    left: 20%;
+    animation: heart 1s ease-out infinite;
+    animation-delay: 4s;
+    animation-fill-mode: backwards;
+}
+
+.heart9{
+    width: 9%;
+    position: absolute;
+    top: -20%;
+    left: 80%;
+    animation: heart 4s ease-out infinite;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
+}
+
+.heart10{
+    width: 8%;
+    position: absolute;
+    top: -90%;
+    left: 90%;
+    animation: heart 5s ease-out infinite;
+    animation-delay: 4s;
+    animation-fill-mode: backwards;
+}
+
+.heart11{
+    width: 6%;
+    position: absolute;
+    top: -75%;
+    left: 25%;
+    animation: heart 1s ease-out infinite;
+    animation-delay: 4s;
+    animation-fill-mode: backwards;
+
+}
+
+.heart12{
+    width: 4%;
+    position: absolute;
+    top: -45%;
+    left: 70%;
+    animation: heart 2s ease-out infinite;
+    animation-delay: 4s;
+    animation-fill-mode: backwards;
+}
+
+
+/* background */
+@keyframes background{
+    from{
+        background-image: url(images/roadSunset.jpg);
+    }
+
+    to{
+        filter: sepia(60);
+    }
+}
+
+/* text */
+@keyframes text{
+    0%, 80%{
+        transform: rotateY(380deg);
+    }
+}
+
+/* sun */
+@keyframes sun{
+    0%{
+        transform: scale(0);
+    }
+
+    50%{
+        transform: scale(3);
+    }
+
+    100%{
+        display: none;
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+}
+
+/* hearts */
+@keyframes heart{
+    0%{
+        display: none;
+        opacity: 0;
+    }
+
+    50%{
+        opacity: .5;
+    }
+
+    100%{
+        opacity: 1;
+    }
+    
+
+}
+
