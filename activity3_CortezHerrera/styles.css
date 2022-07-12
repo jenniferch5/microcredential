@@ -546,7 +546,7 @@ span{
 }
 
 .pic3{
-    background-image: linear-gradient(rgba(4,9,30,.7), rgba(4,9,30,.5)), url(images/pinkClouds.jpg); 
+    filter: invert(10%); 
 }
 
 .card3 .h1{
