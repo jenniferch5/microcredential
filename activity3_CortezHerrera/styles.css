@@ -546,7 +546,7 @@ span{
 }
 
 .pic3{
-    background: linear-gradient(380deg, rgba(0,0,0,.80), rgba(0,0,0,.80)); 
+    background-image: linear-gradient(rgba(4,9,30,.7), rgba(4,9,30,.5)); 
 }
 
 .card3 .h1{
