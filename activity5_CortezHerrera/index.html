@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Cortez Herrera: activity 5</title>
+</head>
+<body>
+    <h1>Jennifer Cortez Herrera</h1>
+
+
+    <script type="text/javascript">
+       /* // creating variables using numbers
+        let num1 = 56;
+        let num2 = -80;
+        let num3 = 3/4;
+
+
+        // creating variables using strings
+        let color = 'beige';
+        let msg = 'Hello World';
+
+
+        // creating variables using booleans
+        let boolean1 = true;
+
+
+        // console
+        console.log(num2);
+        console.log("Good evening");
+        console.log("The color is "+ color);   //concatenate a string with a variable
+        console.log(`The color is ${color}`);  //backtick = template literals
+
+
+        // display a window
+        let name = prompt("Enter a name: ", "Where am I?");
+
+
+        // collect numbers
+        let number1 = prompt("Enter number 1: ");
+        number1 = parseInt(number1)
+
+        let number2 = parseInt(prompt("Enter number 2: "));
+        let summation = number1 + number2; 
+
+
+        // STRINGS + METHODS
+        let name2 = "Will Smith";
+        let name2Length = name2.length; 
+
+        let upperName = name2.toUpperCase();  //this is to save the info
+        let lowerName = name2.toLowerCase();  //this is to save the info
+
+        let wordChange = name2.replace(" ", "HELLO");        //with space in name2
+        let trimWord = name2.trim().replace(" ", "HELLO");   //with space in name2
+
+        let newName = name2.slice(2, 8);   //no space in name2
+
+
+        //ARRAYS
+        let everything = [-23, "color", true, "Peter", 88]
+
+        let copyArray = everything;    //link to each other
+        let sliceArray = everything.slice();   //for variables to behave independently */
+
+
+
+
+        // activity 5
+        console.log("Activity 5.1: variables and prompt method");
+        let name = prompt("Enter your name: ");
+        let num = prompt("Enter a number: ");
+        console.log("Welcome to the program" + " " +name +"." + " " + "Your lucky number is" + " " +num +".");
+        console.log(`Good morning ${name}` + `.` + ` ` + `You entered number: ${num}` + `.`);
+
+
+        console.log("Activity 5.2: strings and string methods");
+        console.log("The second letter of the word is:" + " " +name[1]);
+        console.log("The length of word" + " " +name + " " + "is" + " " +name.length);
+        console.log(name.toUpperCase());
+        console.log("The last two characters of the word" + " " +name + " " + "is" + " " +name.slice(-2));
+        
+        
+        console.log("Activity 5.3: arrays and array methods");
+        let array = [8, "Purple", true, 21];
+        console.log("Mixed array with initial values: " + " " +array);
+        let animal = prompt("Enter a animal: ");
+        array.push(animal);
+        console.log("Mixed array with an new animal added to the end: " + " " +array);
+        let negativeNum = prompt("Enter a negative number: ");
+        array.unshift(negativeNum);
+        console.log("Mixed array with a new NEGATIVE NUMBER added to the front, beginning, of the array: " + " " +array);
+        let newArray = array;
+        let copyArray = array.slice();
+        copyArray.reverse();
+        console.log("Mixed array " + " " +array + " " + "and reverse of copy array: " + " " +copyArray);
+
+    </script>
+</body>
+</html>
