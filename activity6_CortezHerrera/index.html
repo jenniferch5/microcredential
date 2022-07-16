@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Cortez Herrera: activity 6</title>
+</head>
+<body>
+    <h1>Jennifer Cortez Herrera</h1>
+
+
+    <script type="text/javascript">
+       /* // conditions
+        //peter > Peter: lowercase > uppercase = true since it's greater
+        // "20" == 20 --> true since value is same even if type of data is different
+
+
+        //ex 1: condition if statements: if true, {statemnet} BUT if false that line is skip and moves on to the next line
+        let goodMood = true;
+        let gotSleep =  true;
+
+        if(goodMood === gotSleep){console.log("Today is a good day!")}
+        else{console.log("I'm moody.");}
+
+
+        //ex 2: check if 2 numbers are exact equal to
+        let num1 = -3;
+        let num2 = -7;
+        let checkNum;
+
+        if(num1 === num2){checkNum = true;}
+        else{checkNum = false;}
+        console.log(`Are the numbers exactly equal to? ${checkNum}`);
+
+
+        //ex 3: check if 2 numbers are exactly equal to, greater than or less than
+        if(num1 === num2){console.log("Numbers are the same");}
+        else if(num1>num2){console.log(`${num1} is greater than ${num2}`);}
+        else if(num2>num1){console.log(`${num1} is less than ${num2}`);}
+        else{console.log("Invalid");}
+        // else if = everything is skip once one is found true
+
+
+        //ex 4: pick a value from an array 
+        let colors = ["Purple", "blue", "grey", "black", "green"];
+        let userPick = parseInt(prompt("Slect a color from 1 to 5"));    //parseInt() converts input into an integer 
+        let selectColor = colors[userPick-1];   // have to put -1 since the position starts at 1 and not 0
+
+        if(selectColor === "purple"){console.log("The select color is purple");}
+        else if(selectColor == "blue"){console.log("The select color is blue");}
+        else if(selectColor == "grey"){console.log("The select color is grey");}
+        else if(selectColor == "black"){console.log("The select color is black");}
+        else if(selectColor == "green"){console.log("The select color is green");}
+        else{console.log("Invalid");}
+
+
+        // ex 5: write js code that opens a dialog box and asks the user to enter a number. If the user enter a string, it will console a msg as: ____ is a string. Otherwise, if the user enters a number, it'll console as: ____ is a number.
+
+        let userInput = prompt("Enter a number: ");
+        let checkInput = isNaN(parseInt(userInput));
+
+        if(checkInput === true){console.log(`${userInput} is a string`);}
+        else{console.log(`${userInput} is a number`);}
+
+
+        // ex 6: Create a JS code, using if-else statement, to check if a password is at least six characters not counting the space. If the password has more than six characters but it also has space, then the program will display an error message.
+
+        let password = prompt("Enter a password with 6+ characters: ");
+        if(password.length >= 6){console.log("Password has more than 6 characters");
+        if(password.indexOf(" ") ===- 1){
+            console.log("Great! Password has no space")
+        }
+        else{console.log("Warning! Password can't have a space")}
+    
+    }
+        else{console.log("Invalid! Password has less than 6 characters");}
+
+
+        //ex 7: Write a JS code that asks the user to enter a name. If the user enters a name, it will display a welcome message with the entered name. Otherwise, if the user does not enter a name, it will display that no name was entered.
+
+        let name = prompt("Enter a name: ");
+        if(name){console.log(`Welcome to the program ${name}`);}
+        else{console.log("You did not enter a name");} 
+
+
+        //logical operators: if one is false, the entire statment is false (&& operator)
+        //ex 8: modification of ex 6
+
+        let password = prompt("Enter a password with 6+ characters: ");
+        if(password.length >= 6 && password.indexOf(" ") ===- 1){console.log(`${password} is valid`);}
+        else{console.log(`Warning ${password} is an incorrect password format`);}
+
+
+        // logical operators: if one is true, the entire statement is true (|| operator)
+        // ex 9: write a JS code that asks the user to rate a book as ____
+        let rate = prompt('Enter a rate for "The Book":\n 1) Excellent \n 2) Good/Average \n 3) Bored \n Selecr a number from 1 to 3.');
+        if(rate === "3"){
+            let comment = ('We are sorry that you find "The Book" boring. Please comment: ')
+            console.log(`Thank you for your feedback: ${comment}`)
+        }
+        else if(rate === "1" || rate === "2"){console.log('Thank you for choosing "The Book" ');}
+        else{console.log("Invalid rate");} 
+
+
+        // ex 11: combining logical operators
+        let age = 7;
+        if(age >= 0 && age <= 7 || age>= 65){console.log("Free tickets");}
+        else if(age >= 8 && age <= 17){console.log("$5.00 per ticket");}
+        else if(age >= 18 && age <= 65){console.log("$8.00 per ticket");}
+        else{console.log("Invalid age");} 
+
+
+        // switch 
+        let colors = ["Purple", "blue", "grey", "black", "green"];
+        let userPick = parseInt(prompt("Slect a color from 1 to 5"));    
+        let selectColor = colors[userPick-1];  
+        switch(selectColor){
+            case 'purple': console.log('The select color is purple')
+            break;
+            case 'blue': console.log('The select color is blue')
+            break;
+            case 'grey': console.log('The select color is grey')
+            break;
+            case 'black': console.log('The select color is black')
+            break;
+            case 'green': console.log('The select color is green')
+            break;
+            default:
+                console.log('Invalid')
+        } */
+
+
+
+
+        // activity 6.1
+        let userInput = prompt('Enter a number or word: ');
+        let word = isNaN(parseInt(userInput));
+
+        if(word === true){console.log(`${userInput} is a string`);}
+        else if(userInput >= 0){console.log(`${userInput} is a positive number`);}
+        else if(userInput <= -1){console.log(`${userInput} is a negative number`);}
+
+
+        // activity 6.2
+        let colorInput = prompt('Select a color (type a, b, or c): \n a) Purple \n b) Blue \n c) Yellow');
+        switch(colorInput){
+            case 'a': case 'A':  
+                 console.log('You selected the color purple')
+                 break;
+            case 'b': case 'B':
+                console.log('You selected the color blue')
+                break;
+            case 'c': case 'C':
+                console.log('You selected the color yellow')
+                break;
+            default:
+                console.log('Color is not in the list.');
+        }
+
+
+
+
+
+
+
+      
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
