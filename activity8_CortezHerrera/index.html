@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Cortez Herrera: activity 8</title>
+</head>
+<body>
+    <h1>Jennifer Cortez Herrera</h1>
+
+    <script type="text/javascript">
+     /*   // ex 1: define a function that will print a message in the console w/ no parameters (empty parenthesis)
+        function msg(){
+            console.log('Hello');
+        }
+
+        msg()    //note: have to include the parenthesis when calling a function name
+
+
+        // ex 2: define a function called printCountthat prints out the number from 3 to 1, inclusive, everytime the function is called
+        function printCount(){
+        for(let i = 3; i >= 1; i -=1 ){
+          console.log(i)
+        }
+      }
+
+
+        // ex 3: define a function that takes a parameter as name and print the argument value in the console
+        function greeting(name){
+            console.log(`Hello ${name}`);
+        }
+
+
+        // ex 4: define a function that will take a message as an argument and convert its value in upper case.
+        function upperMessage(message){
+            let upper = message.toUpperCase();
+            console.log(upper);
+        }
+
+
+        //ex 5: define a function that will take two parameters, firstName and lastName, and print the first name with the initial letter of the last name.
+        function greet(firstName, lastName){
+            console.log(`Hello ${firstName} ${lastName[0].toUpperCase()}`);
+        }
+
+
+        // ex 6: define a function that has two parameters, message and numCounts. message parameter take a string and parameter numCounts takes a number. Within the function, it prints message value numCounts time.
+        function printMsg(message, numCount){
+            for(counter = 0; counter < numCount; counter++){
+                console.log(`Counter ${counter} = ${message}`);
+            }
+        }
+
+
+        // ex 7: define a function that return the sum of two numbers
+        function sumXY(){
+            let x = 7, y = -3;
+            return x+y
+        }
+
+        // ex 8: in some dice games like Craps, a roll of two 1’s is called “Snake Eyes”. It is generally not a good roll. Define a function callel isSnakeEyes which accepts two numbers as inputs, representing two dice. If the two numbers are both 1’s, please print “Snake Eyes!” otherwise print “Not Snake Eyes!”
+        function isSnakeEyes(dice1, dice2){
+            if(dice1 === 1 && dice2 === 1){
+                console.log('Snake eyes');
+            }
+            else(console.log('Not snake eys'))
+        }
+
+
+        //ex 9: define a function that takes a number as parameter. the function will double the number and return the result
+        function doubleNumber(number){
+            let dNumber = number*2
+            return dNumber
+        }
+
+
+        // ex 10: define a function that adds two number and return the sum. Save the return value in a variable
+        let a = 5/6, b = 3, c = 9, d = -5;
+
+        function sumNum(num1, num2){
+            let sum = num1 + num2
+            return sum
+        }
+
+        let number1 = sumNum(10, d)   
+        let number2 = sumNum(a, c)
+
+
+        // ex 11: define a function that checks if the temperature outdoor is greater than 70. The function should accept a single number argument and return a true if the temperature is greater than or equal to 70 and a false if the temperature is less than 70.
+        function isShortsWeather(temperature){
+            if(temperature >= 75){return true;}
+            else{return false;}
+        }
+
+
+        // ex 12: define a function that accepts a single array argument. The function should return the last item in an array. If the array is empty, the function should return null.
+        function lastElement(arrayInput){
+            if(arrayInput === undefined){return null}
+            else if(arrayInput.length !== 0){
+                let lastIndex = arrayInput.length - 1;
+                return arrayInput[lastIndex]
+            }
+            else{return null}
+        }
+
+
+        // math functions
+        let numPI = Math.PI;
+        console.log(`PI value = ${numPI}`);
+
+        // math.round() returns the nearest integer
+        console.log(`PI with Math.round() = ${Math.round(numPI)}`);
+
+        // math.ceil() returns the value rounded up to its nearest integer
+        console.log(`PI with Math.ceil() = ${Math.ceil(numPI)}`);
+
+        // math.floor() returns the value rounded to its nearest integer
+        console.log(`PI with Math.floor() = ${Math.floor(numPI)}`);
+
+        // mmath.trunc () returns the integer, whole, part of number
+        console.log(`PI with Math.trunc() = ${Math.trunc(numPI)}`);
+
+        // math.pow(base, exponent) returns the value of base to the power of exponent
+        console.log(`Math.pow(b, e) = ${Math.pow(2,3)}`);
+
+        // math.sqrt() returns the square root of a number
+        console.log(`Math.sqrt() = ${Math.sqrt(85)}`);
+        
+        // math.random() returns a random number between 0(inclusive) and 1(exclusive)
+        console.log(`Math.random() = ${Math.random()}`);
+
+
+        // ex 13: create a function that randomly generate a number 
+        function pickNum(){
+            let pick = 10 + Math.round(Math.random()*10)
+            return pick
+        }
+
+
+        // ex 14: Create a function that randomly pick a color from an array.
+        let colors = ['blue', 'purple', 'red', 'orange', 'green']
+        function colorPick(lastIndex){
+            let pick = Math.round(Math.random()*lastIndex);
+            return pick;
+        }
+
+        pickedIndex = colorPick(colors.length - 1)
+        console.log(`The picked color is = ${pickedIndex}`);   */
+
+      
+      
+      
+        // activity 8.1
+        function checkName(){
+            let nameInput = prompt("Enter your name: ");
+
+            while(nameInput === null || nameInput === ' ' || !isNaN(nameInput)){
+                if(nameInput === null || nameInput === ' '){
+                    nameInput = prompt('You forgot to enter a name. Enter a name again: ');
+                }
+                else{
+                    nameInput = prompt(`${nameInput} is invalid! Enter a name again: `);
+                }
+            } 
+            console.log(`Welcome ${nameInput.toUpperCase()} to the class!`);
+        }
+
+
+        // activity 8.2
+        function checkNum(){
+            let numInput = prompt("Enter a number: ");
+
+            while(numInput === null || numInput === ' ' || isNaN(parseInt(numInput))){
+                if(numInput === null || numInput === ' ' || isNaN(parseInt(numInput))){
+                    numInput = prompt('Enter a valid number:');
+                }
+            }
+            if(numInput %2 === 0){
+                return true;
+            }
+            else{return false;}
+        }
+
+
+        // activity 8.3
+        function lottery(numGames){
+            for(let i = 0; i < numGames; i++){
+                console.log(`${numGames}  [${Math.round(Math.random()*99)}, ${Math.round(Math.random()*99)}, ${Math.round(Math.random()*99)}, ${Math.round(Math.random()*99)}, ${Math.round(Math.random()*99)}]`);
+            }
+        }
+ 
+    </script>
+
+</body>
+</html>
