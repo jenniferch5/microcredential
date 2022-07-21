@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Cortez Herrera: activity 10</title>
+    <style>
+        .colorBlue{color: darkblue; text-align: center; font-family: monospace;}
+        .colorSubtitle{color: orange; text-align: right; font-family: Arial;}
+        .subtitle{font-size: 2rem; text-align: center; background-color: aquamarine;}
+        li{background-color: cyan;}
+        .highlight{background-color: darkcyan;}
+    </style>
+</head>
+<body>
+    <a href="activity10.html" target="_blank">Link to activity 10</a>
+    <br>
+
+
+    <!-- ex 1: getElementById-->
+    <p id="one">Here is some text</p>
+
+
+    <!-- ex 2: getElementsByTagName + ex 6: innerHTML-->
+    <p>Here is some text 1</p>
+    <p>Here is some text 2</p>
+    <p>Here is some text 3</p>
+
+
+    <!-- ex 3: getElementsByClassName, ex 4: querySelector, ex 5: querySelectorAll -->
+    <div id="special">
+        <p class="name">First name</p>
+        <p class="name">Last name</p>
+        <p class="n1">Full name</p>
+    </div>
+
+    <!-- ex 10: setAttribute -->
+    <img src="https://devsprouthosting.com/images/egg.jpg" width="200" class="image1">
+
+
+    <!-- ex 11: adding classes w/ classList.add-->
+    <h2 class="colorSubtitle" id="subH2">Example of classes</h2>
+
+
+    <!-- ex 12: class.List.toggle-->
+    <ul>
+        <li>Hello 1</li>
+        <li class="highlight">Hello 2</li>
+        <li>Hello 3</li>
+        <li>Hello 4</li>
+        <li class="highlight">Hello 5</li>
+        <li>Hello 6</li>
+    </ul>
+
+    <script type="text/javascript">
+        // ex 1: 
+        let pOne = document.getElementById("one");
+        pOne.style.color = "red";
+
+
+        // ex 2: 
+        let myText = document.getElementsByTagName("p");
+
+
+        // ex 3: 
+        let n = document.getElementsByClassName("name");
+        for(let eachName of n){
+            eachName.style.color = 'magenta'
+        }
+
+
+        // ex 4:
+        let container = document.querySelector("#special");
+        let n1P = document.querySelector(".n1");
+        let pTag = document.querySelector("p");
+
+        container.style.backgroundColor = "lightblue";
+        n1P.style.fontSize = "1.5em";
+        pTag.style.textAlign = "center";
+
+
+        // ex 5: 
+        let collectName = document.querySelectorAll(".name");
+        for (let name of collectName){
+            name.style.padding = '1em'
+            name.style.backgroundColor = 'yellow'
+        } 
+        
+  
+        // ex 6: 
+        let allP = document.querySelectorAll("p")[2];
+        allP.innerHTML = "<b><em>Hello</em></b> There";
+
+
+        // ex 8: 
+        let fullName = document.querySelector('.name')
+        fullName.className = 'colorBlue'
+
+
+        // ex 10: 
+        let image = document.querySelector('.image1')
+        image.setAttribute('alt','image of an egg') 
+        image.setAttribute('title','White egg')  //note: have 2 return 2 parts: attribute name and value
+
+
+        // ex 11:
+        let subtitleH2 = document.querySelector('#subH2') 
+        subtitleH2.classList.add('subtitle')
+
+
+        // ex 12:
+        let listItems = document.querySelectorAll('li')
+        for(let eachItem of listItems){
+            eachItem.classList.toggle('highlight')
+        }
+
+
+        // ex 13: create and append a new element to the body
+        let newLocation = document.querySelector('#subH2')   // ex 13b
+        const newImg = document.createElement('img')
+        newImg.src = 'https://staticg.sportskeeda.com/editor/2022/07/0675f-16578185306906-1920.jpg'
+        document.body.appendChild(newImg)
+        newLocation.appendChild(newImg)    // ex 13b
+        newImg.style.width = '50%'
+
+        // step 1. create an element
+        // step 2. give content to that element
+        // step 3. append to the position where the new element will be added
+
+
+
+
+        // note: in order to use removeChild() you need to pick the parent
+
+    </script>
+    
+</body>
+</html>
+
+
