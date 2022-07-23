@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Cortez Herrera: activity 12</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <!-- Responsiveness -->
+    <h1 class="mainTitle">Cities</h1>
+    <nav class="nav">
+        <a href="https://www1.nyc.gov/" target="_blank">NYC</a>
+        <a href="https://www.cuny.edu/" target="_blank">CUNY</a>
+        <a href="https://www.qcc.cuny.edu/" target="_blank">QCC</a>
+    </nav>
+    <section class="cardContainer">
+        <div class="card">
+            <img src="images/city.jpg" alt="Image of a city at night.">
+            <h3>City Night</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <!-- open model window -->
+            <a id="item1">Add to cart</a>
+        </div>
+
+        <div class="card">
+            <img src="images/cityscape.jpg" alt="Image of a cityscape.">
+            <h3>Cityscape</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/night_cs.jpg" alt="Image of a cityscape.">
+            <h3>Citites</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="card">
+            <img src="images/skyscrapers.jpg" alt="Image of skyscrapers at night.">
+            <h3>Skyscrapers</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Forms -->
+    <form>
+        <input type="text" name="username" value=""  maxlength="20" placeholder="Up to 20 characters" class="input2">
+        <br>
+        <input type="password" name="password" value="" placeholder="Up to 8 charcaters" maxlength="8" id="myPassword">
+        <a id="viewPassword">View password</a>
+        <hr>
+
+
+        <h3>Select your favorite animal</h3>
+        <label for="cat">Cats <input type="checkbox" name="animals" value="cat" id="cat"> </label>
+        <br>
+        <label for="dog">Dogs <input type="checkbox" name="animals" value="dog" id="dog"> </label>
+        <hr>
+
+
+        <h3>Select a gender</h3>
+        <label>Female <input type="radio" name="gender" value="female"></label>
+        <label>Male <input type="radio" name="gender" value="male"></label>
+        <label>Others <input type="radio" name="gender" value="others"></label>
+    </form>
+    <hr>
+
+    <form action="https://www.google.com/search">
+        <input type="search" name="q" placeholder="Type your search">
+        <button>Search Google</button>
+    </form>
+    <form action="https://www.youtube.com/results">
+        <input type="search" name="search_query" placeholder="Search">
+        <button>Search at YouTube</button>
+    </form>
+    <hr>
+
+    <label for="date">Select appointment date: </label>
+    <input type="date" name="appointment" value="" id="date">
+
+
+    <!-- slideshow -->
+    <section class="container_slideshow">
+        <h1>Manual slideshow</h1>
+        <div class="slide">
+            <img src="images/city.jpg">
+            <p>City</p>
+        </div>
+        <div class="slide">
+            <img src="images/cityscape.jpg">
+            <p>Cityscape</p>
+        </div>
+        <div class="slide">
+            <img src="images/night_cs.jpg">
+            <p>Cities</p>
+        </div>
+        <div class="slide">
+            <img src="images/skyscrapers.jpg">
+            <p>Skyscrapers</p>
+        </div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </section>
+
+    <section class="container_slideshow">
+        <h1>Automatic slideshow</h1>
+        <div class="slideAuto">
+            <img src="images/city.jpg">
+            <p>City</p>
+        </div>
+        <div class="slideAuto">
+            <img src="images/cityscape.jpg">
+            <p>Cityscape</p>
+        </div>
+        <div class="slideAuto">
+            <img src="images/night_cs.jpg">
+            <p>Cities</p>
+        </div>
+        <div class="slideAuto">
+            <img src="images/skyscrapers.jpg">
+            <p>Skyscrapers</p>
+        </div>
+    </section>
+
+
+    <h1>Jennifer Cortez Herrera</h1>
+    
+    <section class="container">
+        <header class="title">Title</header>
+        <main class="intro">Intro</main>
+        <footer class="footer">Contact Us</footer>
+    </section>
+
+
+    <!-- model window for item1 -->
+    <form id="myForm" action="sentForm.html">
+    <section class="modalWindow">
+        <div class="modalBody">
+            <header class="modalHeader"><a href="#" id="closeModal">X</a></header>
+            <main class="modalInfo">Info of the product <br>
+                <label for="firstN">First Name: </label><input type="text" name="firstName" id="firstN">
+                <br>
+                <label for="lastN">Last Name: </label><input type="text" name="lastName" id="lastN">
+            </main>
+            <footer class="modalFooter"><input type="submit" value="Submit" class="input1"></footer>
+        </div>
+    </section>
+    </form>
+
+    <script type="text/javascript" src="index.js"></script>
+    
+</body>
+</html>
