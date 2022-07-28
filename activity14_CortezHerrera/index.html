@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Cortez Herrera: activity 14</title>
+    <style>
+        .pBackground{
+            background-color: bisque;
+        }
+        #addClass, #removeClass, #toggleClass{
+            padding: .5em 1em;
+            margin: 1em;
+            background-color: darksalmon;
+            border-radius: 12px;
+        }
+        .container{
+            border: inset 5px lightblue;
+            width: 300px;
+            height: 200px;
+        }
+        .circle{
+            background-color: darkslateblue;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            padding: 3em;
+            margin: 3em auto;
+            text-align: center;
+            font-size: 2em;
+            color: ivory;
+        }
+        .rectangle{
+            border-radius: 0;
+            background-color: cornflowerblue;
+            border: dashed 10px lightgray;
+        }
+
+
+        /* activity 14 */
+        hr{
+            margin-top: 5em;
+        }
+        .shapes{
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+            margin-top: 5em;
+            text-align: center;
+        }
+
+        .shapes p{
+            font-size: 2rem;
+            padding: 2.5em 1em;
+        }
+
+        .circ{
+            background-color: mediumslateblue;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+
+        }
+        .square{
+            background-color: aquamarine;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- activity 14 -->
+    <div class="shapes">
+        <div class="circ" id="circ"><p>Touch me!</p></div>
+        <div class="square" id="square"><p>Click me!</p></div>
+    </div>
+    <hr>
+
+    
+    <!-- double click, resize, and hover event -->
+    <div class="circle" id="circle">Mouse over to see the hover event. Also try to double-click or resize the browser window</div>
+
+
+    <!-- click event -->
+    <button id="addClass">Add</button>
+    <button id="removeClass">Remove</button>
+    <button id="toggleClass">Toggle</button>
+    <div class="container"></div>
+
+
+    <!-- ex 1: -->
+    <h1>Basic jQuery selector</h1>
+    <section id="content">
+        <p>Selectors are used to select content within a webpage</p>
+        <p>They use a very CSS-like syntax</p>
+        <ul id="list1">
+            <h3>Fruits:</h3>
+            <li class="a">Apples</li>
+            <li class="a">Oranges</li>
+            <li class="b">Grapes</li>
+            <li class="b">Strawberries</li>
+        </ul>
+        <div id="example">
+            <p class="a">Paragraph 1</p>
+            <p id="para1">Paragraph 2</p>
+            <p class="b">Paragraph 3</p>
+            <p id="para4">Paragraph 4</p>
+            <p id="para5">Paragraph 5</p>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // activity 14
+
+            // circle
+            let circCount = 0;
+
+            $('#circ').on('mouseleave', circEffect)
+            function circEffect(){
+                $('#circ').css('background-color', circColor())
+                circCount++;
+                $('#circ').html('<p>The mouse leaves the circle' + " " + circCount + " " + 'times</p>')
+            }
+
+            function circColor(){
+                const r = Math.floor(Math.random()*256)
+                const g = Math.floor(Math.random()*256)
+                const b = Math.floor(Math.random()*256)
+                return `rgb(${r}, ${g}, ${b})`
+            }
+
+            // square
+            let squareCount = 0;
+
+             $('#square').click(function(){
+                $('#square').css('background-color', squareColor())
+                squareCount++;
+                $('#square').html('<p>The square was clicked' + " " + squareCount + " " + 'times</p>')
+             })
+             
+             function squareColor(){
+                 const r = Math.floor(Math.random()*256)
+                 const g = Math.floor(Math.random()*256)
+                 const b = Math.floor(Math.random()*256)
+                 return `rgb(${r}, ${g}, ${b})`
+             }
+
+
+             
+
+            // ex 1a: id + class selector
+            $('#para1').css('border', '3px solid red')
+            $('.a').css({'color': 'magenta', 'padding': '.5em 1em', 'background-color': 'yellow'})
+
+            // ex 1b: descendant selector
+            $('div > p:odd').css('background-color', 'aquamarine')
+            $('ul + div').css('border', '10px ridge olive')
+
+            // ex 1c: advanced filter selector
+            $("p:contains('3')").css({'border': 'gray dashed 5px', 'font-family': 'arial'})
+
+            // ex 1d: DOM tree selector
+            let elem = $('#para1');
+            elem.prev().css('border', '10px dotted blue')
+
+
+            // ex 2: change content of an element
+            $('#para5').html("<p>Hello World</p>")
+
+
+            // ex 3: append + prepend
+            $('#para4').append(' New content 1')
+            $('#para4').prepend('New content 2 ')
+
+            
+            // ex 4: before and after methods
+            $('#example').before('/*/*/*/*/* Before /*/*/*/*/*/*')
+            $('#example').after('/*/*/*/*/* After /*/*/*/*/*/*')
+
+
+            // ex 5: click events 
+            $('#addClass').click(function(){
+                $('.container').addClass('pBackground')
+            })
+            $('#removeClass').click(function(){
+                $('.container').removeClass('pBackground')
+            })
+            $('#toggleClass').click(function(){
+                $('.container').toggleClass('pBackground')
+            })
+
+
+            // ex 6: mouse event: mouseover + mouseleave
+            $('.container').on('mouseover mouseleave', mouseEffect)
+            function mouseEffect(){
+                $('.container').toggleClass('pBackground')
+            }
+
+
+            // ex 7: double click, resize, and hover event
+            $(function(){
+                $('#circle').dblclick(fnDoubleClick);
+                $('#circle').hover(fnHover);
+                $(window).resize(fnResize);
+            })
+            function fnDoubleClick(){
+                $('#circle').toggleClass('rectangle')
+                $('#circle').html('<h3>Double click event</h3>')
+            }
+            function fnHover(){
+                $('#circle').toggleClass('rectangle')
+                $('#circle').html('<h3>Hover event</h3>')
+            }
+            function fnResize(){
+                $('#circle').toggleClass('rectangle')
+                $('#circle').html('<h3>Resize browser window event</h3>')
+            }
+
+
+
+           
+
+
+
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        })
+
+    </script>
+    
+</body>
+</html>
