@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Cortez Herrera: activity 15</title>
+    <style>
+        .container{
+            background-color: rgb(242, 208, 163);
+            width: 50%;
+            height: 50vh;
+            margin: auto;
+        }
+
+        .title, .counter, .fact{
+            text-align: center;
+            font-size: 1.3rem;
+            padding-top: 1em;
+        }
+
+        .counter{
+            padding-top: 0;
+        }
+
+        .fact{
+            width: 60%;
+            margin: auto;
+        }
+
+        .btn{
+            text-align: center;
+            padding: 2em 0;
+        }
+
+        button{
+            font-size: 1rem;
+            padding: 1em 1.5em;
+            margin: 0 5em;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .clicked{
+            background-color: rgb(130, 235, 130);
+        }
+
+        .clear{
+            background-color: rgb(237, 131, 131);
+        }
+
+        button:hover{
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            opacity: .8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jennifer Cortez Herrera: activity 15</h1>
+
+    <!-- activity 15 -->
+    <div class="btn">
+        <button class="clicked" id="clicked">Click to get cat facts</button>
+        <button class="clear" id="clear">Clear and Reset</button>
+    </div>
+    <div class="container">
+        <div class="title"><h1>Cat Facts &#128008; </h1></div>
+        <div class="content">
+            <div class="counter"></div>
+            <div class="fact"></div>
+        </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        // activity 15
+        $(document).ready(function(){
+            let factCount = 0;
+
+            $('#clicked').click(function(){
+                factCount++;
+                $('.counter').html('<p>' + factCount + '</p>')
+
+                fetch("https://catfact.ninja/fact")
+                .then((res) => {
+                    console.log('Loaded: cat facts using fetch', res)
+                    res.json().then((data) => $('.fact').html(data['fact']))
+                })
+            })
+
+            $('#clear').click(function(){
+                $('.fact').html('')
+                $('.counter').html('')
+                factCount = 0;
+            })
+        })
+
+
+
+        // making an AJAX request using using XHR
+        const req = new XMLHttpRequest();
+        req.onload = function(){
+            console.log('Loaded: using XHR');
+            console.log(this.response);    //note: gives you specific info you want
+            const person = JSON.parse(this.response)
+            console.log(`NAME: ${person.name}, Height: ${person.height}`);
+        }
+
+        req.onerror = function(){
+            console.log('Error');
+            console.log(this);
+        }
+
+        req.open("GET", "https://swapi.dev/api/people/1/")
+        req.send();
+
+
+        // making an AJAX request using using fetch
+        fetch("https://swapi.dev/api/people/1/")
+        .then((res) => {
+            console.log('Loaded: using fetch', res)
+            res.json().then((data) => console.log('JSON result using fetch', data))
+        })
+
+
+        // try and catch statements in fetch + making multiple request using fetch 
+        const loadPeople = async() => {
+            try{
+                const res = await fetch("https://swapi.dev/api/people/1/")
+                const data = await res.json()
+                console.log('Multiple response using fetch, 1st person', data)
+    
+                const res2 = await fetch("https://swapi.dev/api/people/2/")
+                const data2 = await res2.json()
+                console.log('Multiple response using fetch, 2nd person', data2)
+            }
+
+            catch(e){
+                console.log('Error', e)
+            }
+        }
+
+
+        // making an AJAX request using using axios
+        let axio = axios.get("https://swapi.dev/api/people/1/")
+        .then(res => {
+            console.log("Response using axios", res)
+        })
+        // console.log("Request using axios", axio);
+
+
+        // choosing specific response 
+        const personID = async(id) => {
+            try{
+                const res = await axios.get(`https://swapi.dev/api/people/${id}/`)
+                console.log(res.data)
+            }
+            catch(e){
+                console.log('Error', e)
+            }
+        }
+
+
+        // making a specific request using API headers
+        const getYear = async() => {
+            const config = {headers: {Accept: 'application/json'}}
+            const res = await axios.get("https://swapi.dev/api/people/1/")
+            console.log("Using headers in axios. Name: ", res.data.name, "Birth year: ", res.data.birth_year);
+        }
+    </script>
+    
+</body>
+</html>
