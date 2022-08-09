@@ -882,11 +882,7 @@ form .text-inputs input {
     display: flex;
     align-items: center;
   }
-
-  .close-modal {
-    padding-left: 9em;
-  }
-
+  
   /* shopping cart modal wiindow */
   .cart-items .item-card .content input {
     width: 45%;
@@ -907,9 +903,6 @@ form .text-inputs input {
   /* modal window */
   .window {
     width: 85%;
-  }
-  .close-modal {
-    padding-left: 8em;
   }
 }
 
@@ -1020,11 +1013,7 @@ form .text-inputs input {
     padding-bottom: 2em;
   }
 
-  .close-modal {
-    padding-left: 12em;
-  }
-
-  /* sopping cart modal window */
+  /* shopping cart modal window */
   .cart-container {
     width: 40%;
     position: fixed;
@@ -1109,11 +1098,6 @@ form .text-inputs input {
     margin-bottom: 15em;
   }
 
-  /* modal window */
-  .close-modal {
-    padding-left: 9em;
-  }
-
   /* shopping cart modal window */
   .cart-container {
     width: 50%;
@@ -1166,10 +1150,6 @@ form .text-inputs input {
   .window-inputs .quantity {
     width: 20%;
     margin-bottom: 1em;
-  }
-
-  .close-modal {
-    padding-left: 6.5em;
   }
 
   /* shopping cart modal window */
